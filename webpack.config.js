@@ -66,6 +66,10 @@ module.exports = {
     },
     plugins,
     resolve: {
-        extensions: [".js", ".jsx"]
+        extensions: [".js", ".jsx"],
+        alias: {
+            'Component': path.join(__dirname, 'src', 'components'),
+            'Slice': path.join(__dirname, 'src','store', 'slice'),
+        }
     }
 }
