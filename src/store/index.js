@@ -1,7 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit";
-import language from './slice/language'
+import { configureStore } from '@reduxjs/toolkit';
+import language from './slice/language';
+import theme from './slice/theme';
+import header from './slice/menu';
+
 export default configureStore({
-    reducer: {
-        language,
-    }
-})
+  reducer: {
+    header,
+    language,
+    theme,
+
+  },
+});
