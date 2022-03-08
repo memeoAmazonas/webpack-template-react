@@ -2,13 +2,25 @@ import React from 'react';
 import itemsConfig from 'Component/Navigation/Menu/itemsConfig';
 import { useDispatch, useSelector } from 'react-redux';
 import { setActual } from 'Slice/menu';
+import { styled } from '@mui/material/styles';
+
 import { ListItemBtn, Text } from 'Component/Navigation/CustomComponents';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { FormattedMessage } from 'react-intl';
 import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
-import Tooltip from '@mui/material/Tooltip';
+import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 
+const ToolTip = styled(({ className, ...props }) => (
+  <Tooltip {...props} arrow classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.arrow}`]: {
+    color: theme.palette.common.black,
+  },
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.black,
+  },
+}));
 const Item = ({
   open, setOpen, values = itemsConfig, isChild = false,
 }) => {
@@ -74,9 +86,9 @@ const Item = ({
       return (
         <>
           {openDivider}
-          <Tooltip title={<FormattedMessage id={label} />} placement="right">
+          <ToolTip title={<FormattedMessage id={label} />} placement="right">
             {item}
-          </Tooltip>
+          </ToolTip>
           {childs}
         </>
       );
