@@ -1,26 +1,15 @@
 import React from 'react';
-import itemsConfig from 'Component/Navigation/Menu/itemsConfig';
 import { useDispatch, useSelector } from 'react-redux';
 import { setActual } from 'Slice/menu';
-import { styled } from '@mui/material/styles';
 
-import { ListItemBtn, Text } from 'Component/Navigation/CustomComponents';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { FormattedMessage } from 'react-intl';
 import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
-import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+import { ToolTip } from 'Component';
+import { ListItemBtn, Text } from '../CustomComponents';
+import itemsConfig from './itemsConfig';
 
-const ToolTip = styled(({ className, ...props }) => (
-  <Tooltip {...props} arrow classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.arrow}`]: {
-    color: theme.palette.common.black,
-  },
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: theme.palette.common.black,
-  },
-}));
 const Item = ({
   open, setOpen, values = itemsConfig, isChild = false,
 }) => {
@@ -46,7 +35,7 @@ const Item = ({
     icon, label, to, child,
   }) => {
     const item = (
-      <ListItemBtn onClick={() => toSend({ to, child, label })} child={isChild}>
+      <ListItemBtn open={open} onClick={() => toSend({ to, child, label })} child={isChild}>
         <ListItemIcon>
           {icon}
         </ListItemIcon>

@@ -73,6 +73,9 @@ module.exports = {
       Slice: path.join(__dirname, 'src', 'store', 'slice'),
       Asset: path.join(__dirname, 'src', 'assets'),
       Theme: path.join(__dirname, 'src', 'theme'),
+      Hooks: path.join(__dirname, 'src', 'hooks'),
+      Views: path.join(__dirname, 'src', 'view'),
+
     },
   },
 };

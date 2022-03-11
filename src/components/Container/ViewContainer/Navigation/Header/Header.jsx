@@ -1,20 +1,23 @@
 import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
-import { AppBar, MenuButton, ToolbarHeader } from 'Component/Navigation/CustomComponents';
 import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 
-function Header({ open, toggleDrawer }) {
+import { CustomToolbar, Language, MenuButton } from 'Component';
+import { AppBar } from '../CustomComponents';
+
+function Header({ open, toggleDrawer, logged = true }) {
   return (
     <>
       <CssBaseline />
       <AppBar sx={{ minHeight: 20 }} position="absolute" open={open} color="grey">
-        <ToolbarHeader
+        <CustomToolbar
           open={open}
           sx={{
-            pr: '26px', // keep right padding when drawer closed
+            pr: '26px',
           }}
         >
+          {logged && (
           <MenuButton
             edge="start"
             color="white"
@@ -27,6 +30,7 @@ function Header({ open, toggleDrawer }) {
           >
             <MenuIcon />
           </MenuButton>
+          )}
           <Typography
             component="h1"
             variant="h7"
@@ -35,7 +39,8 @@ function Header({ open, toggleDrawer }) {
           >
             Dashboard
           </Typography>
-        </ToolbarHeader>
+          <Language />
+        </CustomToolbar>
       </AppBar>
 
     </>

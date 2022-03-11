@@ -1,14 +1,9 @@
 import { styled } from '@mui/material/styles';
-import Toolbar from '@mui/material/Toolbar';
 import MuiAppBar from '@mui/material/AppBar';
 import MuiDrawer from '@mui/material/Drawer';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemButton from '@mui/material/ListItemButton';
-import IconButton from '@mui/material/IconButton';
 
-export const ToolbarHeader = styled(Toolbar, {})(({ theme }) => ({
-  backgroundColor: theme.palette.black.second,
-}));
 const drawerWidth = 150;
 
 export const AppBar = styled(MuiAppBar, {
@@ -73,17 +68,22 @@ export const Text = styled(ListItemText, {})(({ theme }) => ({
 
 export const ListItemBtn = styled(
   ListItemButton,
-  { shouldForwardProp: (prop) => prop !== 'child' },
-)(({ theme, child }) => ({
+  {},
+)(({ theme, child, open = false }) => ({
   height: theme.spacing(2.5),
   marginBottom: theme.spacing(0.5),
-  paddingLeft: theme.spacing(1.2),
+  paddingLeft: theme.spacing(0.6),
   backgroundColor: theme.palette.black.second,
+  ...(!open && {
+    boxShadow: theme.shadows.btn,
+  }),
   ...(child && {
     paddingLeft: theme.spacing(2.5),
   }),
   '& .MuiListItemIcon-root': {
     minWidth: theme.spacing(2.7),
+    paddingRight: theme.spacing(1.4),
+
   },
   '&:hover': {
     backgroundColor: theme.palette.white.main,
@@ -96,16 +96,4 @@ export const ListItemBtn = styled(
       },
     },
   },
-}));
-export const MenuButton = styled(IconButton, {})(({ theme }) => ({
-  width: theme.spacing(2),
-  height: theme.spacing(2),
-  borderRadius: 0,
-  '&:hover': {
-    backgroundColor: theme.palette.white.main,
-    svg: {
-      color: theme.palette.black.second,
-    },
-  },
-
 }));

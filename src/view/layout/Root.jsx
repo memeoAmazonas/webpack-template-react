@@ -11,12 +11,13 @@ function Root() {
   const { value } = useSelector((state) => (state.theme));
   const [theme, setTheme] = React.useState();
   React.useEffect(() => {
+    console.log('value', value);
     if (value === 'light') {
       setTheme(light);
     } else {
       setTheme(dark);
     }
-  });
+  }, [value]);
   if (theme) {
     return (
       <StyledEngineProvider injectFirst>

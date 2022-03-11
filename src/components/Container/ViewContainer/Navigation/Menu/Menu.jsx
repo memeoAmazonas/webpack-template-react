@@ -1,14 +1,14 @@
 import React from 'react';
-import {
-  Drawer, MenuButton, ToolbarHeader,
-} from 'Component/Navigation/CustomComponents';
 
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
-import { CustomTheme } from 'Component';
+import { CustomTheme, MenuButton, CustomToolbar } from 'Component';
 import { useDispatch } from 'react-redux';
 import { setActual } from 'Slice/menu';
+import {
+  Drawer,
+} from '../CustomComponents';
 import Item from './Item';
 
 function Menu({ open, toggleDrawer, setOpen }) {
@@ -19,7 +19,7 @@ function Menu({ open, toggleDrawer, setOpen }) {
   };
   return (
     <Drawer variant="permanent" open={open}>
-      <ToolbarHeader
+      <CustomToolbar
         open={open}
         sx={{
           display: 'flex',
@@ -39,7 +39,7 @@ function Menu({ open, toggleDrawer, setOpen }) {
         >
           <ChevronLeftIcon />
         </MenuButton>
-      </ToolbarHeader>
+      </CustomToolbar>
       <Divider />
       <List component="nav">
         <Item open={open} setOpen={setOpen} />

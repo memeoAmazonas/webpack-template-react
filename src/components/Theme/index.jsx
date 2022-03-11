@@ -56,12 +56,9 @@ function Theme() {
   const [checked, setChecked] = React.useState(actual === 'dark');
   const dispatch = useDispatch();
   const handleChange = (event) => {
-    console.log(event);
     if (event.target.checked) {
-      localStorage.setItem('theme', 'light');
       dispatch(setTheme('light'));
     } else {
-      localStorage.setItem('theme', 'dark');
       dispatch(setTheme('dark'));
     }
     setChecked(event.target.checked);

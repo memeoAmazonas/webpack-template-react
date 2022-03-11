@@ -3,6 +3,9 @@
   "en": "EN",
   "es.large": "Español",
   "en.large": "English",
-  "home": "Inicio",
-  "users": "Usuarios"
+  "home": "Home",
+  "users": "Usuarios",
+  "change.language": "Change language",
+  "open.filter": "Show filters",
+  "close.filter": "Hide filters"
 }

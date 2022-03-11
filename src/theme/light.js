@@ -1,16 +1,29 @@
 import { createTheme } from '@mui/material';
-import { red } from '@mui/material/colors';
+import { red, green, common } from '@mui/material/colors';
 
 const theme = createTheme({
   spacing: 10,
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 480,
+      md: 720,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
   palette: {
     white: {
-      main: '#000',
+      main: common.black,
       second: '#fff1',
     },
     black: {
-      main: '#fff',
-      second: '#fff',
+      main: common.white,
+      second: common.white,
+    },
+    // #ffffff80
+    bgView: {
+      main: '#00000080',
     },
     error: {
       main: red.A400,
@@ -18,9 +31,19 @@ const theme = createTheme({
     grey: {
       main: '#fefefe',
     },
+    btn: {
+      positive: {
+        main: green['600'],
+        text: common.white,
+      },
+    },
   },
   typography: {
     fontFamily: ['"Raleway"', '"Montserrat"', 'Open Sans'].join(','),
+    fontSize: 20,
+  },
+  shadows: {
+    btn: '0 0 1rem 0 rgba(0, 0, 0, 0.4)',
   },
 });
 
