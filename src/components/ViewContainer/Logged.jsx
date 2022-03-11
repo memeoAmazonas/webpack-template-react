@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Navigation from 'Component/Container/ViewContainer/Navigation';
-import Content from 'Component/Container/ViewContainer/content/Content';
+import Navigation from 'Component/Navigation';
+import Content from 'Component/ViewContainer/content/Content';
 
 function Logged({ content, filter }) {
   return (

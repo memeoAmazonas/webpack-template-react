@@ -4,4 +4,4 @@ export { default as ToolTip } from './Tooltip';
 export * from './Button';
 export * from './Container/Paper';
 export * from './Container/Toolbar';
-export * from './Container/ViewContainer';
+export * from './ViewContainer';
