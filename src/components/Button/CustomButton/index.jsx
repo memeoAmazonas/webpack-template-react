@@ -1,7 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import { IconButton } from '@mui/material';
-import { Login } from '@mui/icons-material';
 
 const BaseButton = (theme) => ({
   color: theme.palette.btn.positive.text,
@@ -31,7 +30,6 @@ export function PositiveButton({ children, disabled, onClick }) {
   return (
     <PositiveButtonBase onClick={onClick} disabled={disabled}>
       {children}
-      <Login />
     </PositiveButtonBase>
   );
 }

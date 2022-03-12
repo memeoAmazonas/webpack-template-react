@@ -3,7 +3,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
 
-import { CustomToolbar, Language, MenuButton } from 'Component';
+import {
+  CustomToolbar, Language, MenuButton, CustomTheme,
+} from 'Component';
 import { AppBar } from '../CustomComponents';
 
 function Header({ open, toggleDrawer, logged = true }) {
@@ -39,6 +41,7 @@ function Header({ open, toggleDrawer, logged = true }) {
           >
             Dashboard
           </Typography>
+          <CustomTheme />
           <Language />
         </CustomToolbar>
       </AppBar>

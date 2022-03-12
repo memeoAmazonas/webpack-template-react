@@ -44,9 +44,9 @@ function Content({ content = null, filter = false }) {
     >
       <Toolbar sx={{ minHeight: '35px !important' }} />
       <Container
-        maxWidth="lg"
+        maxWidth="xl"
         sx={{
-          mt: 1, mb: 4, paddingX: '5px !important', minHeight: 150,
+          mt: 1, mb: 4, minHeight: 150,
         }}
       >
         <Grid container spacing={1}>

@@ -7,5 +7,9 @@
   "en.large": "English",
   "change.language": "Cambiar de idioma",
   "open.filter": "Mostrar filtros",
-  "close.filter": "Ocultar filtros"
+  "close.filter": "Ocultar filtros",
+  "login": "Iniciar sesión",
+  "username": "Nombre de usuario",
+  "password": "Contraseña"
+
 }
