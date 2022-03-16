@@ -5,3 +5,4 @@ export * from './Button';
 export * from './Container/Paper';
 export * from './Container/Toolbar';
 export * from './ViewContainer';
+export { default as Toast } from './Toast';

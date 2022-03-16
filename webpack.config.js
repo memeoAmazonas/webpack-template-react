@@ -3,6 +3,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 let mode = 'development';
 let target = 'web';
@@ -32,6 +33,7 @@ module.exports = {
     static: `./${outputSrc}`,
     hot: true,
     open: true,
+    historyApiFallback: true,
   },
   output: {
     path: path.resolve(__dirname, outputSrc),
@@ -65,16 +67,21 @@ module.exports = {
       },
     ],
   },
-  plugins,
+  plugins: [
+    ...plugins,
+    new Dotenv(),
+  ],
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
       Component: path.join(__dirname, 'src', 'components'),
       Slice: path.join(__dirname, 'src', 'store', 'slice'),
+      Context: path.join(__dirname, 'src', 'store', 'context'),
       Asset: path.join(__dirname, 'src', 'assets'),
       Theme: path.join(__dirname, 'src', 'theme'),
       Hooks: path.join(__dirname, 'src', 'hooks'),
       Views: path.join(__dirname, 'src', 'view'),
+      Src: path.join(__dirname, 'src'),
 
     },
   },

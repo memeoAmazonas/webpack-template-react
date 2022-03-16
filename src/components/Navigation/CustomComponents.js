@@ -64,6 +64,10 @@ export const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 
 
 export const Text = styled(ListItemText, {})(({ theme }) => ({
   color: theme.palette.white.main,
+  span: {
+    textShadow: theme.customShadows.btn,
+    fontSize: 16.5,
+  },
 }));
 
 export const ListItemBtn = styled(
@@ -75,7 +79,7 @@ export const ListItemBtn = styled(
   paddingLeft: theme.spacing(0.6),
   backgroundColor: theme.palette.black.second,
   ...(!open && {
-    boxShadow: theme.shadows.btn,
+    boxShadow: theme.customShadows.btn,
   }),
   ...(child && {
     paddingLeft: theme.spacing(2.5),

@@ -10,5 +10,9 @@
   "close.filter": "Hide filters",
   "login": "Login",
   "username": "Username",
-  "password": "Password"
+  "password": "Password",
+  "save.username": "Save username",
+  "logout": "Logout",
+  "error.generic": "An error has occurred, please try again later",
+  "error.login": "Wrong username or password"
 }

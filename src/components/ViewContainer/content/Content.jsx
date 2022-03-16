@@ -7,10 +7,10 @@ import Paper from '@mui/material/Paper';
 import GetBreakPoint from 'Hooks/GetBreakpoint';
 import Filter from './Filter';
 
-function Content({ content = null, filter = false }) {
+function Content({ content = null, filter = null }) {
   const [measures, setMeasures] = React.useState(filter ? { xs: 12, md: 9 } : { xs: 12, md: 12 });
   const [filterMeasures, setFilterMeasures] = React.useState({ xs: 12, md: 3 });
-  const [open, setOpen] = React.useState(filter !== null);
+  const [open, setOpen] = React.useState(filter !== null );
   const size = GetBreakPoint({ measure: 'md' });
   const actualFilter = filter && (
   <Filter

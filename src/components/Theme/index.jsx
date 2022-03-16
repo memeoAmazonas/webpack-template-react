@@ -57,9 +57,9 @@ function Theme() {
   const dispatch = useDispatch();
   const handleChange = (event) => {
     if (event.target.checked) {
-      dispatch(setTheme('light'));
-    } else {
       dispatch(setTheme('dark'));
+    } else {
+      dispatch(setTheme('light'));
     }
     setChecked(event.target.checked);
   };

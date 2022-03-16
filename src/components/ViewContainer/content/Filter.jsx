@@ -25,7 +25,6 @@ function Filter({
           color="white"
           sx={{ ml: 0 }}
           onClick={setOpen}
-          hover={!open}
         >
           {icon}
         </MenuButton>

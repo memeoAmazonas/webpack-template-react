@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 export const MenuButton = styled(IconButton, { shouldForwardProp: (prop) => prop !== 'static' })(({ theme, hover = false }) => ({
   width: theme.spacing(2),
   height: theme.spacing(2),
-  boxShadow: theme.shadows.btn,
+  boxShadow: theme.customShadows.btn,
   borderRadius: 0,
   ...(!hover && {
     '&:hover': {

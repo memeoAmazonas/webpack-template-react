@@ -20,7 +20,6 @@ function Language() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  console.log('language', language);
   const send = (id) => {
     dispatch(setLanguage(id));
     handleClose();

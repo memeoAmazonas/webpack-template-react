@@ -16,7 +16,7 @@ export const PositiveButtonBase = styled(IconButton, {})(({ theme }) => ({
   '&: hover': {
     color: theme.palette.btn.positive.main,
     fontWeight: 'bold',
-    boxShadow: theme.shadows.btn,
+    boxShadow: theme.customShadows.btn,
     backgroundColor: `${theme.palette.black.second} !important`,
     border: `1px solid ${theme.palette.btn.positive.main}`,
   },

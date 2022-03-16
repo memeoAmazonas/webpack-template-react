@@ -10,6 +10,12 @@
   "close.filter": "Ocultar filtros",
   "login": "Iniciar sesión",
   "username": "Nombre de usuario",
-  "password": "Contraseña"
+  "password": "Contraseña",
+  "save.username": "Guardar nombre de usuario",
+  "logout": "Cerrar sesión",
+  "error.generic": "A ocurrido un error, por favor intentelo mas tarde",
+  "error.login": "Nombre de usuario o contraseña incorrectos"
+
+
 
 }

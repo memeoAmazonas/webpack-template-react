@@ -2,11 +2,13 @@ import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 import red from '@mui/material/colors/red';
 
-export const TextInput = styled(TextField)(({ theme, error, noFocus }) => ({
+export const TextInput = styled(TextField)(({
+  theme, error, nofocus = false, mb = 3.2,
+}) => ({
 
   '& label': {
     color: error ? theme.palette.error : theme.palette.white.main,
-    ...(noFocus && !error && {
+    ...(nofocus && !error && {
       color: theme.palette.btn.positive.main,
     }),
   },
@@ -16,8 +18,8 @@ export const TextInput = styled(TextField)(({ theme, error, noFocus }) => ({
 
   '& .MuiOutlinedInput-root': {
     color: error === true ? red.A400 : theme.palette.white.main,
-    marginBottom: theme.spacing(2.2),
-    ...(noFocus && !error && {
+    marginBottom: theme.spacing(mb),
+    ...(nofocus && !error && {
       color: theme.palette.btn.positive.main,
     }),
     borderRadius: 0,
@@ -26,7 +28,7 @@ export const TextInput = styled(TextField)(({ theme, error, noFocus }) => ({
     },
     '& fieldset': {
       borderColor: error ? theme.palette.error : theme.palette.white.main,
-      ...(noFocus && !error && {
+      ...(nofocus && !error && {
         borderColor: theme.palette.btn.positive.main,
       }),
     },

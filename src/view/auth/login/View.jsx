@@ -1,55 +1,30 @@
 import React from 'react';
-import {
-  CustomPaper, PositiveButton, NoLogged,
-} from 'Component';
 import { AccountCircle, Login, VpnKey } from '@mui/icons-material';
 import { FormattedMessage } from 'react-intl';
+import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
-import isEmail from 'validator/lib/isEmail';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import InputAdornment from '@mui/material/InputAdornment';
+
+import {
+  CustomPaper, PositiveButton, NoLogged, Toast,
+} from 'Component';
 import { TextInput } from 'Views/auth/login/styles';
-import isLength from 'validator/es/lib/isLength';
 import logo from 'Asset/images/logos/logo.png';
+import { LoginHook } from 'Hooks/LoginHook';
+import LoggedHook from 'Hooks/LoggedHook';
 
 function View() {
-  const [email, setEmail] = React.useState('');
-  const [errorEmail, setErrorEmail] = React.useState(false);
-  const [focusEmail, setFocusEmail] = React.useState(false);
-
-  const [psw, setPsw] = React.useState('');
-  const [errorPsw, setErrorPsw] = React.useState(false);
-  const [focusPsw, setFocusPsw] = React.useState(false);
-
-  const onChangeEmail = (e) => {
-    setFocusPsw(true);
-    setFocusEmail(false);
-    setEmail(e.target.value.trim());
-  };
-  const onChangePsw = (e) => {
-    setFocusEmail(true);
-    setFocusPsw(false);
-    setPsw(e.target.value.trim());
-  };
-  const onBlur = (key, isBlur) => {
-    if (key) {
-      if (isBlur) {
-        setErrorEmail(!isEmail(email));
-        setFocusEmail(true);
-      } else {
-        setFocusEmail(false);
-        setErrorEmail(false);
-      }
-    } else if (isBlur) {
-      setErrorPsw(!isLength(psw, { min: 6 }));
-      setFocusPsw(true);
-    } else {
-      setFocusPsw(false);
-      setErrorPsw(false);
-    }
-  };
+  LoggedHook(true);
+  const {
+    errorEmail, email, onChangeEmail, onBlur, focusEmail, msgError,
+    errorPsw, onChangePsw, focusPsw, saveLogin, onSave, onLogin, isDisabled, open,
+  } = LoginHook();
 
   return (
     <NoLogged>
+      <Toast severity="error" message={msgError} open={open} />
       <CustomPaper elevation={3}>
         <img alt="logo" style={{ borderRadius: '50%' }} src={logo} width={140} height={140} />
         <Grid
@@ -58,14 +33,14 @@ function View() {
         >
           <Grid item md={9}>
             <TextInput
-              autocomplete="off"
               error={errorEmail}
+              value={email}
               label={<FormattedMessage id="username" />}
               onChange={onChangeEmail}
               onBlur={() => onBlur(true, true)}
               onFocus={() => onBlur(true, false)}
               size="small"
-              noFocus={focusEmail}
+              nofocus={focusEmail}
               fullWidth
               margin="dense"
               InputProps={{
@@ -85,8 +60,9 @@ function View() {
               onBlur={() => onBlur(false, true)}
               onFocus={() => onBlur(false, false)}
               size="small"
-              noFocus={focusPsw}
+              nofocus={focusPsw}
               fullWidth
+              mb={1.2}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -95,10 +71,29 @@ function View() {
                 ),
               }}
             />
+            <FormGroup>
+              <FormControlLabel
+                control={(
+                  <Checkbox
+                    checked={saveLogin}
+                    onChange={onSave}
+                    inputProps={{ 'aria-label': 'controlled' }}
+                    sx={{
+                      color: (theme) => theme.palette.btn.positive.main,
+                      '&.Mui-checked': {
+                        color: (theme) => theme.palette.btn.positive.main,
+                      },
+                    }}
+                  />
+                                )}
+                label={<FormattedMessage id="save.username" />}
+              />
+            </FormGroup>
           </Grid>
         </Grid>
-        <PositiveButton disabled={!isLength(psw, { min: 6 }) || !isEmail(email)}>
-          <FormattedMessage id="login" type="email" />
+
+        <PositiveButton onClick={onLogin} disabled={isDisabled}>
+          <FormattedMessage id="login" />
           <Login />
         </PositiveButton>
       </CustomPaper>

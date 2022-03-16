@@ -1,14 +1,23 @@
 import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import MenuIcon from '@mui/icons-material/Menu';
-import Typography from '@mui/material/Typography';
 
 import {
   CustomToolbar, Language, MenuButton, CustomTheme,
 } from 'Component';
+import { Text } from 'Component/Navigation/CustomComponents';
+import { FormattedMessage } from 'react-intl';
+import { useDispatch, useSelector } from 'react-redux';
+import { setOpen } from 'Slice/menu';
 import { AppBar } from '../CustomComponents';
 
-function Header({ open, toggleDrawer, logged = true }) {
+function Header({ logged = true }) {
+  const dispatch = useDispatch();
+  const { value, open } = useSelector((state) => state.header);
+  const onOpen = () => {
+    //dispatch(setOpen(!open));
+     console.log('hola', open);
+  };
   return (
     <>
       <CssBaseline />
@@ -24,7 +33,7 @@ function Header({ open, toggleDrawer, logged = true }) {
             edge="start"
             color="white"
             aria-label="open drawer"
-            onClick={toggleDrawer}
+            onClick={onOpen}
             sx={{
               mr: (theme) => theme.spacing(1.2),
               ...(open && { display: 'none' }),
@@ -33,14 +42,9 @@ function Header({ open, toggleDrawer, logged = true }) {
             <MenuIcon />
           </MenuButton>
           )}
-          <Typography
-            component="h1"
-            variant="h7"
-            noWrap
-            sx={{ flexGrow: 1, color: (theme) => theme.palette.white.main }}
-          >
-            Dashboard
-          </Typography>
+          <Text sx={{ span: { fontSize: 16 } }}>
+            <FormattedMessage id={value} />
+          </Text>
           <CustomTheme />
           <Language />
         </CustomToolbar>
