@@ -3,15 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 export const headerSlice = createSlice({
   name: 'header',
   initialState: {
-    value: 'login',
+    value: sessionStorage.getItem('actual') || 'login',
     open: false,
   },
   reducers: {
     setActual: (state, action) => {
+      sessionStorage.setItem('actual', action.payload);
       state.value = action.payload;
     },
     setOpen: (state, action) => {
-      console.log(action.payload);
       state.open = action.payload;
     },
   },

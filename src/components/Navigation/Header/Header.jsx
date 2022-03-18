@@ -8,15 +8,14 @@ import {
 import { Text } from 'Component/Navigation/CustomComponents';
 import { FormattedMessage } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
-import { setOpen } from 'Slice/menu';
+import { setOpen } from 'Slice/header';
 import { AppBar } from '../CustomComponents';
 
 function Header({ logged = true }) {
   const dispatch = useDispatch();
   const { value, open } = useSelector((state) => state.header);
   const onOpen = () => {
-    //dispatch(setOpen(!open));
-     console.log('hola', open);
+    dispatch(setOpen(!open));
   };
   return (
     <>
@@ -32,7 +31,6 @@ function Header({ logged = true }) {
           <MenuButton
             edge="start"
             color="white"
-            aria-label="open drawer"
             onClick={onOpen}
             sx={{
               mr: (theme) => theme.spacing(1.2),

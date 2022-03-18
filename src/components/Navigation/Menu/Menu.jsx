@@ -5,7 +5,7 @@ import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
 import { MenuButton, CustomToolbar } from 'Component';
 import { useDispatch, useSelector } from 'react-redux';
-import { setActual, setOpen } from 'Slice/menu';
+import { setOpen } from 'Slice/header';
 import {
   Drawer,
 } from '../CustomComponents';

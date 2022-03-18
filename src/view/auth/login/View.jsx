@@ -8,9 +8,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 
 import {
-  CustomPaper, PositiveButton, NoLogged, Toast,
+  CustomPaper, PositiveButton, NoLogged, TextInput, Toast,
 } from 'Component';
-import { TextInput } from 'Views/auth/login/styles';
+
 import logo from 'Asset/images/logos/logo.png';
 import { LoginHook } from 'Hooks/LoginHook';
 import LoggedHook from 'Hooks/LoggedHook';

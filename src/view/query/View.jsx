@@ -1,11 +1,13 @@
 import React from 'react';
 import { Logged } from 'Component/ViewContainer';
+import Content from 'Views/query/Content';
+import Filter from 'Views/query/Filter/Filter';
 
 function View() {
   return (
-    <Logged content={
-      <h2>hola query</h2>
-        }
+    <Logged
+      content={<Content />}
+      filter={<Filter />}
     />
   );
 }

@@ -11,17 +11,10 @@ const itemsConfig = [
     icon: MenuIcon(Home),
     label: 'home',
     to: '/home',
-    child: [
-      {
-        icon: MenuIcon(Home),
-        label: 'home',
-        to: '/home',
-      },
-    ],
   },
   {
     icon: MenuIcon(VerifiedUser),
-    label: 'users',
+    label: 'query',
     to: '/query',
   },
   {

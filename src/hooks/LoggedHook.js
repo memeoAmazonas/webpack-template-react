@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Auth } from 'aws-amplify';
 import { setInfo } from 'Slice/user';
-import { setActual } from 'Slice/menu';
+import { setActual } from 'Slice/header';
 
 function LoggedHook(isLogin = false) {
   const dispatch = useDispatch();

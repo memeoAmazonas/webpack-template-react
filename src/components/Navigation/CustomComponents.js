@@ -62,11 +62,11 @@ export const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 
   }),
 );
 
-export const Text = styled(ListItemText, {})(({ theme }) => ({
+export const Text = styled(ListItemText, {})(({ theme, size = 16.5 }) => ({
   color: theme.palette.white.main,
   span: {
     textShadow: theme.customShadows.btn,
-    fontSize: 16.5,
+    fontSize: size,
   },
 }));
 
@@ -82,7 +82,7 @@ export const ListItemBtn = styled(
     boxShadow: theme.customShadows.btn,
   }),
   ...(child && {
-    paddingLeft: theme.spacing(2.5),
+    paddingLeft: theme.spacing(1.2),
   }),
   '& .MuiListItemIcon-root': {
     minWidth: theme.spacing(2.7),

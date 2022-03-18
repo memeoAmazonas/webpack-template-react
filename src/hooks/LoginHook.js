@@ -5,7 +5,7 @@ import { setSaveLogin } from 'Slice/user';
 import isEmail from 'validator/lib/isEmail';
 import isLength from 'validator/es/lib/isLength';
 import { signInService } from 'Views/auth/login/service';
-import { setActual } from 'Slice/menu';
+import { setActual } from 'Slice/header';
 
 export const LoginHook = () => {
   const dispatch = useDispatch();
@@ -41,7 +41,7 @@ export const LoginHook = () => {
     }
     try {
       const user = await signInService(email, psw);
-      Object.keys(user)
+      Object.keys(user);
       if (!Object.keys(user).includes('error')) {
         dispatch(setActual('home'));
         navigate('/home');

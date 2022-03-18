@@ -1,12 +1,15 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
+
+import header from './slice/header';
 import language from './slice/language';
+import query from './slice/query';
 import theme from './slice/theme';
-import header from './slice/menu';
 import user from './slice/user';
 
 const combinedReducer = combineReducers({
   header,
   language,
+  query,
   theme,
   user,
 });
