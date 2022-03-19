@@ -38,7 +38,7 @@ export const querySlice = createSlice({
     },
   },
   extraReducers: {
-    [fetcMetadata](state) {
+    [fetcMetadata.pending](state) {
       state.loading = HTTP_STATUS.PENDING;
     },
     [fetcMetadata.fulfilled](state, { payload }) {

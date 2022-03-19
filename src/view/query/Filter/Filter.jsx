@@ -25,6 +25,7 @@ function Filter() {
     dispatch(clear());
     dispatch(setDomain(''));
   };
+  console.log('loading', loading);
   return (
     <>
       {table && <Link disabled label="reset" onClick={reset} />}
