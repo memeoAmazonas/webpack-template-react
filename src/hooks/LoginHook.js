@@ -10,7 +10,7 @@ import { setActual } from 'Slice/header';
 export const LoginHook = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [email, setEmail] = React.useState(localStorage.getItem('email') || '');
+  const [email, setEmail] = React.useState(localStorage.getItem('email') || 'mito2k@hotmail.com');
   const [errorEmail, setErrorEmail] = React.useState(false);
   const [focusEmail, setFocusEmail] = React.useState();
   const [msgError, setMsgError] = React.useState('error.generic');

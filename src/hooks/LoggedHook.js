@@ -22,7 +22,6 @@ function LoggedHook(isLogin = false) {
     if (!info) {
       try {
         const data = await Auth.currentSession();
-
         if (data) {
           setLogged(true);
           const id = data.getAccessToken().getJwtToken();
@@ -33,7 +32,7 @@ function LoggedHook(isLogin = false) {
           navigate('/');
         }
       } catch (e) {
-        console.info('Usuario no logeado!!!');
+        console.info('user logged error');
         navigate('/');
       }
     } else {

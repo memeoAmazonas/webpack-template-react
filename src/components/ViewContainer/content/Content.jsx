@@ -10,7 +10,7 @@ import Filter from './Filter';
 function Content({ content = null, filter = null }) {
   const [measures, setMeasures] = React.useState(filter ? { xs: 12, md: 9 } : { xs: 12, md: 12 });
   const [filterMeasures, setFilterMeasures] = React.useState({ xs: 12, md: 3 });
-  const [open, setOpen] = React.useState(filter !== null );
+  const [open, setOpen] = React.useState(filter !== null);
   const size = GetBreakPoint({ measure: 'md' });
   const actualFilter = filter && (
   <Filter
@@ -25,7 +25,7 @@ function Content({ content = null, filter = null }) {
     if (filter) {
       if (open) {
         setMeasures({ xs: 12, md: 9 });
-        setFilterMeasures({ xs: 6, md: 3 });
+        setFilterMeasures({ xs: 12, md: 3 });
       } else {
         setMeasures({ xs: 12, md: 11 });
         setFilterMeasures({ xs: 6, md: 1 });

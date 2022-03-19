@@ -42,42 +42,16 @@ export const TextInput = styled(TextField)(({
     },
   },
 }));
-export const OutlineInput = styled(OutlinedInput)(({
-  theme, error, nofocus = false, mb = 3.2,
-}) => ({
+export const OutlineInput = styled(OutlinedInput)(({ theme }) => ({
 
-  '& label': {
-    color: error ? theme.palette.error : theme.palette.white.main,
-    ...(nofocus && !error && {
-      color: theme.palette.btn.positive.main,
-    }),
-  },
-  '& label.Mui-focused': {
+  '& .MuiOutlinedInput-input': {
     color: theme.palette.white.main,
-  },
-
-  '& .MuiOutlinedInput-root': {
-    color: error === true ? red.A400 : theme.palette.white.main,
-    marginBottom: theme.spacing(mb),
-    ...(nofocus && !error && {
-      color: theme.palette.btn.positive.main,
-    }),
-    borderRadius: 0,
-    '& .MuiSvgIcon-root': {
-      color: error === true ? red.A400 : theme.palette.white.main,
+    backgroundColor: theme.palette.black.second,
+    '& label': {
+      color: 'green',
     },
-    '& fieldset': {
-      borderColor: error ? theme.palette.error : theme.palette.white.main,
-      ...(nofocus && !error && {
-        borderColor: theme.palette.btn.positive.main,
-      }),
-    },
-    '&:hover fieldset': {
-      borderColor: theme.palette.btn.positive.main,
-      borderRadius: 0,
-    },
-    '&.Mui-focused fieldset': {
-      borderColor: theme.palette.white.main,
+    '& label.Mui-focused': {
+      color: theme.palette.white.main,
     },
   },
 }));

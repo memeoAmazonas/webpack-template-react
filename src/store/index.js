@@ -1,5 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
+import domain from './slice/domain';
 import header from './slice/header';
 import language from './slice/language';
 import query from './slice/query';
@@ -7,6 +8,7 @@ import theme from './slice/theme';
 import user from './slice/user';
 
 const combinedReducer = combineReducers({
+  domain,
   header,
   language,
   query,

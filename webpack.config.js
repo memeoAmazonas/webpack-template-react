@@ -82,7 +82,7 @@ module.exports = {
       Hooks: path.join(__dirname, 'src', 'hooks'),
       Views: path.join(__dirname, 'src', 'view'),
       Src: path.join(__dirname, 'src'),
-
+      Service: path.join(__dirname, 'src', 'services'),
     },
   },
 };

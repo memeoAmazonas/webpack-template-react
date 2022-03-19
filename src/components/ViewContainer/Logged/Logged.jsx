@@ -25,7 +25,7 @@ function Logged({ content, filter }) {
     try {
       await Auth.signOut();
     } catch (e) {
-      console.info('logged succesfull');
+      console.info('logout succesfull');
     }
     dispatch(logout());
     navigate('/');

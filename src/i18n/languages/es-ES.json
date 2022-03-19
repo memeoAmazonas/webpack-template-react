@@ -107,5 +107,12 @@
   "f48": "Original File Name",
   "select.table": "Seleccione una tabla",
   "reset": "Reset",
-  "condition": "condición"
+  "condition": "condición",
+  "select.domain": "seleccione un dominio",
+  "messages_forenses": "Forenses",
+  "messages_agregados": "Agregados",
+  "accept": "Aceptar",
+  "cancel": "Cancelar",
+  "empty": "",
+  "add.condition": "Agregar condición"
 }

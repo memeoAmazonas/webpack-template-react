@@ -8,16 +8,17 @@ import { FormattedMessage } from 'react-intl';
 import { Loading } from 'Component/index';
 
 export default function RadioButtonLabel({
-  title, value, handleChange, data,
+  title, value, handleChange, data, loading = false,
 }) {
-  if (!data) return Array.from(Array(2).keys()).map((k) => <Loading key={k} first />);
+  if (loading) return Array.from(Array(2).keys()).map((k) => <Loading key={k} first />);
 
-  const content = data
+  const content = data && data
     .map(({ value: actualValue, label }) => (
       <FormControlLabel
         value={actualValue}
         key={label}
         sx={{
+
           color: (theme) => theme.palette.white.main,
         }}
         control={(
@@ -38,6 +39,7 @@ export default function RadioButtonLabel({
         sx={{
           color: (theme) => theme.palette.white.main,
           fontSize: 16,
+          fontWeight: '600',
         }}
         id={title}
       >
