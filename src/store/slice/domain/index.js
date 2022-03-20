@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { HTTP_STATUS } from 'Service/url';
+import { HTTP_STATUS } from 'Asset/constants';
 import DmarcServices from 'Service/dmarc.services';
 import MaperClass from 'Src/store/mapper/mapper.class';
 

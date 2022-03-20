@@ -16,7 +16,7 @@
   "error.generic": "A ocurrido un error, por favor intentelo mas tarde",
   "error.login": "Nombre de usuario o contraseña incorrectos",
   "query": "Query",
-  "select.field": "Seleccione campos",
+  "select.fields": "Seleccione campos",
   "c1": "Id Record",
   "c2": "Policy Published Domain",
   "c3": "Customer Id",
@@ -114,5 +114,9 @@
   "accept": "Aceptar",
   "cancel": "Cancelar",
   "empty": "",
-  "add.condition": "Agregar condición"
+  "add.condition": "Agregar condición",
+  "select.field": "Seleccione Campo",
+  "select.condition": "Seleccione condición",
+  "select.value": "Seleccione el valor",
+  "ingress.value": "Ingrese el valor"
 }

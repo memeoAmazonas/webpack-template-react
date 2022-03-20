@@ -1,13 +1,13 @@
+import { URL } from 'Asset/constants';
 import http from './http.common';
-import * as URL from './url';
 
 class DmarcServices {
   GetDomain() {
-    return http.get(URL.DOMAINS_URL);
+    return http.get(URL.DOMAINS);
   }
 
   GetMetadaQuery() {
-    return http.get(URL.METADATA_TABLES_QUERY_URL);
+    return http.get(URL.METADATA_TABLES_QUERY);
   }
 }
 export default new DmarcServices();

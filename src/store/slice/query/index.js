@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import DmarcServices from 'Service/dmarc.services';
-import { HTTP_STATUS } from 'Service/url';
+import { HTTP_STATUS } from 'Asset/constants';
 import MaperClass from 'Src/store/mapper/mapper.class';
 
 const NAMESPACE = 'query';
 
 const initialState = {
   fields: [],
+  condition: [],
   table: null,
   tables: null,
   loading: null,
@@ -33,8 +34,17 @@ export const querySlice = createSlice({
       state.fields = [];
       state.fieldsByTable = MaperClass.GetNameFields(state.data[action.payload]);
     },
+
     clear: (state) => {
       state.table = null;
+      state.condition = [];
+      state.fields = [];
+    },
+    setCondition: (state, { payload }) => {
+      state.condition = state.condition.concat(payload);
+    },
+    deleteCondition: (state, { payload }) => {
+      state.condition = state.condition.filter((item) => item.id !== payload);
     },
   },
   extraReducers: {
@@ -53,6 +63,8 @@ export const querySlice = createSlice({
   },
 });
 
-export const { setFields, setTable, clear } = querySlice.actions;
+export const {
+  setFields, setTable, setCondition, clear, deleteCondition,
+} = querySlice.actions;
 
 export default querySlice.reducer;

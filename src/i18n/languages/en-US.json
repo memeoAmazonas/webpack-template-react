@@ -16,7 +16,7 @@
   "error.generic": "An error has occurred, please try again later",
   "error.login": "Wrong username or password",
   "query": "Query",
-  "select.field": "Select fields",
+  "select.fields": "Select fields",
   "c1": "Id Record",
   "c2": "Policy Published Domain",
   "c3": "Customer Id",
@@ -57,7 +57,7 @@
   "c38": "Org Name",
   "c39": "Report Id",
   "c40": "XML Schema",
-  "f1":	"id",
+  "f1":	"identifi",
   "f2": "Feedback Type",
   "f3": "User Agent",
   "f4": "Version",
@@ -114,5 +114,9 @@
   "accept": "Accept",
   "cancel": "Cancel",
   "empty": "",
-  "add.condition": "Add condition"
+  "add.condition": "Add condition",
+  "select.field": "Select Field",
+  "select.condition": "Select condition",
+  "select.value": "Select value",
+  "ingress.value": "Enter value"
 }

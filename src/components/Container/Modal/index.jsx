@@ -38,6 +38,7 @@ function Modal({
   iconAccept = null,
   iconButton = <Add />,
   disabledSend = false,
+  onCancel = () => null,
 }) {
   const [open, setOpen] = React.useState(false);
 
@@ -52,6 +53,7 @@ function Modal({
   const handleClose = (event, reason) => {
     if (reason !== 'backdropClick') {
       setOpen(false);
+      onCancel();
     }
   };
   const fullscreen = GetBreakPoint({ measure: 'sm', type: 'down' });
@@ -67,11 +69,11 @@ function Modal({
           {children}
         </DialogContent>
         <DialogActions>
-          <PositiveButton disabled={disabledSend} onClick={handleClose}>
+          <PositiveButton disabled={disabledSend} onClick={onSend}>
             {iconAccept}
             <FormattedMessage id={labelAccept} />
           </PositiveButton>
-          <NegativeButton onClick={onSend}>
+          <NegativeButton onClick={handleClose}>
             {iconCancel}
             <FormattedMessage id={labelCancel} />
           </NegativeButton>

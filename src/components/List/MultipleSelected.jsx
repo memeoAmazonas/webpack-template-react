@@ -22,8 +22,11 @@ const MenuProps = (theme) => ({
 });
 
 function MultipleSelected({
-  title, value, handleChange, data, multiple = false,
+  title, value, handleChange,
+  data, multiple = false,
+  translate = true, disabled = false,
 }) {
+  const setTransale = (name) => (translate ? <FormattedMessage id={name} /> : name);
   const theme = useTheme();
   return (
     <FormControl>
@@ -36,6 +39,7 @@ function MultipleSelected({
         <FormattedMessage id={title} />
       </InputLabel>
       <Select
+        disabled={disabled}
         labelId={`select-multiple-${title}`}
         id={`multiple-${title}`}
         multiple={multiple}
@@ -50,7 +54,7 @@ function MultipleSelected({
             value={name}
             name={name}
           >
-            <FormattedMessage id={name} />
+            {setTransale(name)}
           </MenuItem>
         ))}
       </Select>

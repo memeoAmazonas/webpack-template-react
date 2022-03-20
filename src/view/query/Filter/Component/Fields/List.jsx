@@ -21,7 +21,7 @@ export default function List() {
   return (
     <Stack>
       <Selected />
-      <L multiple data={fieldsByTable} handleChange={handleChange} value={fields} title="select.field" />
+      <L multiple data={fieldsByTable} handleChange={handleChange} value={fields} title="select.fields" />
     </Stack>
   );
 }

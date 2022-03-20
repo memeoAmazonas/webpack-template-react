@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDomains, setDomain } from 'Slice/domain';
-import { HTTP_STATUS } from 'Service/url';
+import { HTTP_STATUS } from 'Asset/constants';
 import { Radio } from 'Component/Button';
 
 export default function () {
